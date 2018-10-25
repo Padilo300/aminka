@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<modification>
+  <code>oct_popup_cart_100</code>
+  <name>Octemplates - Popup Cart</name>
+  <version>1.0.0</version>
+  <author>Octemplates</author>
+  <link>http://octemplates.net/</link>
+  <file path="catalog/controller/common/cart.php">
+    <operation error="skip">
+      <search><![CDATA[$data['text_empty'] = $this->language->get('text_empty');]]></search>
+      <add position="after"><![CDATA[
+        // oct_popup_cart start
+        $data['oct_popup_cart_data'] = $this->config->get('oct_popup_cart_data');
+        // oct_popup_cart end
+      ]]></add>
+    </operation>
+  </file>
+</modification>

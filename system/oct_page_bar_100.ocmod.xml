@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<modification>
+  <code>oct_page_bar_100</code>
+  <name>Octemplates - Page Bar</name>
+  <version>1.0.0</version>
+  <author>Octemplates</author>
+  <link>http://octemplates.net/</link>
+  <file path="catalog/controller/common/footer.php">
+    <operation error="skip">
+      <search><![CDATA[$data['contact'] = $this->url->link('information/contact');]]></search>
+      <add position="before"><![CDATA[
+        // start: oct_page_bar
+        $data['oct_page_bar_data'] = $this->config->get('oct_page_bar_data');
+        $oct_page_bar_data = $this->config->get('oct_page_bar_data');
+        $data['oct_page_bar'] = (isset($oct_page_bar_data['status']) && $oct_page_bar_data['status'] == 1) ? $this->load->controller('extension/module/oct_page_bar') : '';
+        // end: oct_page_bar
+      ]]></add>
+    </operation>
+  </file>
+  <file path="catalog/controller/product/compare.php">
+ 	  <operation error="skip">
+      <search><![CDATA[public function add() {]]></search>
+      <add position="after"><![CDATA[
+        // start: oct_page_bar
+        $oct_page_bar_data = $this->config->get('oct_page_bar_data');
+        // end: oct_page_bar
+      ]]></add>
+    </operation>
+    <operation error="skip">
+      <search><![CDATA[if (count($this->session->data['compare']) >= 4) {]]></search>
+      <add position="replace" offset="2"><![CDATA[
+        // start: oct_page_bar
+        if (isset($oct_page_bar_data['status']) && $oct_page_bar_data['status'] == 1) {
+        
+        } else {
+          if (count($this->session->data['compare']) >= 4) {
+						array_shift($this->session->data['compare']);
+					}
+        }
+        // end: oct_page_bar
+      ]]></add>
+    </operation>
+  </file>
+</modification>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<modification>
+  <code>oct_popup_subscribe_100</code>
+  <name>Octemplates - Popup Subscribe</name>
+  <version>1.0.0</version>
+  <author>Octemplates</author>
+  <link>http://octemplates.net/</link>
+  <file path="catalog/controller/common/footer.php">
+    <operation error="skip">
+      <search><![CDATA[public function index() {]]></search>
+      <add position="after"><![CDATA[
+        // subscribe start
+        $data['oct_popup_subscribe_form_data'] = $this->config->get('oct_popup_subscribe_form_data');
+        $data['oct_popup_subscribe'] = $this->load->controller('extension/module/oct_static_subscribe');
+        // subscribe end
+        ]]></add>
+    </operation>
+  </file>
+</modification>

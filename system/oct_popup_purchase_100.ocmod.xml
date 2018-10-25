@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<modification>
+  <code>oct_popup_purchase_100</code>
+  <name>Octemplates - Popup Purchase</name>
+  <version>1.0.0</version>
+  <author>Octemplates</author>
+  <link>http://octemplates.net/</link>
+  <file path="catalog/language/en-gb/product/product.php">
+    <operation error="skip">
+      <search><![CDATA[<?php]]></search>
+      <add position="after"><![CDATA[
+        // oct_popup_purchase start
+        $_['text_oct_popup_purchase'] = 'Purchase now';
+        // oct_popup_purchase end
+      ]]></add>
+    </operation>
+  </file>
+  <file path="catalog/language/ru-ru/product/product.php">
+    <operation error="skip">
+      <search><![CDATA[<?php]]></search>
+      <add position="after"><![CDATA[
+        // oct_popup_purchase start
+        $_['text_oct_popup_purchase'] = 'Заказать в один клик';
+        // oct_popup_purchase end
+      ]]></add>
+    </operation>
+  </file>  
+  <file path="catalog/language/uk-ua/product/product.php">
+    <operation error="skip">
+      <search><![CDATA[<?php]]></search>
+      <add position="after"><![CDATA[
+        // oct_popup_purchase start
+        $_['text_oct_popup_purchase'] = 'Замовити в один клік';
+        // oct_popup_purchase end
+      ]]></add>
+    </operation>
+  </file>
+  <file path="catalog/controller/product/product.php">
+    <operation error="skip">
+      <search><![CDATA[public function index() {]]></search>
+      <add position="after"><![CDATA[
+        // oct_popup_purchase start
+        $data['oct_popup_purchase_data'] = $this->config->get('oct_popup_purchase_data');
+        // oct_popup_purchase end
+      ]]></add>
+    </operation>
+    <operation error="skip">
+      <search><![CDATA[if ($product_info['quantity'] <= 0) {]]></search>
+      <add position="before"><![CDATA[
+        // oct_popup_purchase start
+        $data['text_oct_popup_purchase'] = $this->language->get('text_oct_popup_purchase');
+        // oct_popup_purchase end
+      ]]></add>
+    </operation>
+  </file>
+</modification>

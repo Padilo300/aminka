@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<modification>
+  <code>oct_advanced_attributes_settings_100</code>
+  <name>Octemplates - Advanced attributes settings</name>
+  <version>1.0.0</version>
+  <author>Octemplates</author>
+  <link>http://octemplates.net/</link>
+  <!-- catalog actions -->
+  <file path="catalog/controller/product/{category,search,special,manufacturer}.php">
+    <operation error="skip">
+      <search><![CDATA[$data['products'][] = array(]]></search>
+      <add position="before"><![CDATA[
+        // oct_advanced_attributes_settings start
+        $oct_attributes = array();
+        $oct_advanced_attributes_settings_data = $this->config->get('oct_advanced_attributes_settings_data');
+
+        if (isset($oct_advanced_attributes_settings_data['status']) && $oct_advanced_attributes_settings_data['status']) {
+          foreach ($this->model_catalog_product->getProductAttributes($result['product_id']) as $attribute_group) {
+            foreach ($attribute_group['attribute'] as $attribute) {
+              if (isset($oct_advanced_attributes_settings_data['allowed_attributes']) && (in_array($attribute['attribute_id'], $oct_advanced_attributes_settings_data['allowed_attributes']))) {
+                $oct_attributes[] = array(
+                  'name' => $attribute['name'],
+                  'text' => $attribute['text']
+                );
+              }
+            }
+          }
+        }
+        // oct_advanced_attributes_settings end
+      ]]></add>
+    </operation>
+    <operation error="skip">
+      <search><![CDATA[$data['products'][] = array(]]></search>
+      <add position="after"><![CDATA[
+        // oct_advanced_attributes_settings start
+        'oct_attributes' => $oct_attributes,
+        // oct_advanced_attributes_settings end
+      ]]></add>
+    </operation>
+  </file>
+</modification>

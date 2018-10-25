@@ -1,0 +1,344 @@
+<?xml version="1.0" encoding="utf-8"?>
+<modification>
+  <name>Octemplates - Lazyload</name>
+  <version>1.0</version>
+  <code>OCTlazyload</code>
+  <author>Octemplates</author>
+  <link>https://octemplates.net/</link>
+
+  <file path="catalog/controller/extension/module/bestseller.php">
+    <operation>
+      <search><![CDATA[$this->load->language('extension/module/bestseller');]]></search>
+      <add position="after"><![CDATA[
+		$oct_data = $this->config->get('oct_techstore_data');
+
+		if ((isset($oct_data['oct_lazyload']) && $oct_data['oct_lazyload'] == 1) && (isset($oct_data['oct_lazyload_module']) && $oct_data['oct_lazyload_module'] == 1)) {
+			if ($oct_data['enable_minify'] == 'off') {
+				$this->document->addScript('catalog/view/theme/oct_techstore/js/lazyload/jquery.lazyload.min.js');
+			}
+
+			$data['oct_lazyload'] = $oct_data['oct_lazyload'];
+
+			if (isset($oct_data['oct_lazyload_image']) && $oct_data['oct_lazyload_image']) {
+				$data['oct_lazyload_image'] = 'image/'.$oct_data['oct_lazyload_image'];
+			} else {
+				$data['oct_lazyload_image'] = '/image/catalog/1lazy/oct_loader_product.gif';
+			}
+		}
+	  ]]></add>
+    </operation>
+
+  </file>
+
+  <file path="catalog/controller/extension/module/featured.php">
+    <operation>
+      <search><![CDATA[$this->load->language('extension/module/featured');]]></search>
+      <add position="after"><![CDATA[
+		$oct_data = $this->config->get('oct_techstore_data');
+
+		if ((isset($oct_data['oct_lazyload']) && $oct_data['oct_lazyload'] == 1) && (isset($oct_data['oct_lazyload_module']) && $oct_data['oct_lazyload_module'] == 1)) {
+			if ($oct_data['enable_minify'] == 'off') {
+				$this->document->addScript('catalog/view/theme/oct_techstore/js/lazyload/jquery.lazyload.min.js');
+			}
+
+			$data['oct_lazyload'] = $oct_data['oct_lazyload'];
+
+			if (isset($oct_data['oct_lazyload_image']) && $oct_data['oct_lazyload_image']) {
+				$data['oct_lazyload_image'] = 'image/'.$oct_data['oct_lazyload_image'];
+			} else {
+				$data['oct_lazyload_image'] = '/image/catalog/1lazy/oct_loader_product.gif';
+			}
+		}
+	  ]]></add>
+    </operation>
+
+  </file>
+
+  <file path="catalog/controller/extension/module/latest.php">
+    <operation>
+      <search><![CDATA[$this->load->language('extension/module/latest');]]></search>
+      <add position="after"><![CDATA[
+		$oct_data = $this->config->get('oct_techstore_data');
+
+		if ((isset($oct_data['oct_lazyload']) && $oct_data['oct_lazyload']) && (isset($oct_data['oct_lazyload_module']) && $oct_data['oct_lazyload_module'])) {
+			if ($oct_data['enable_minify'] == 'off') {
+				$this->document->addScript('catalog/view/theme/oct_techstore/js/lazyload/jquery.lazyload.min.js');
+			}
+
+			$data['oct_lazyload'] = $oct_data['oct_lazyload'];
+
+			if (isset($oct_data['oct_lazyload_image']) && $oct_data['oct_lazyload_image']) {
+				$data['oct_lazyload_image'] = 'image/'.$oct_data['oct_lazyload_image'];
+			} else {
+				$data['oct_lazyload_image'] = '/image/catalog/1lazy/oct_loader_product.gif';
+			}
+		}
+	  ]]></add>
+    </operation>
+
+  </file>
+
+  <file path="catalog/controller/extension/module/oct_latest.php">
+    <operation>
+      <search><![CDATA[$this->load->language('extension/module/oct_latest');]]></search>
+      <add position="after"><![CDATA[
+		$oct_data = $this->config->get('oct_techstore_data');
+
+		if ((isset($oct_data['oct_lazyload']) && $oct_data['oct_lazyload'] == 1) && (isset($oct_data['oct_lazyload_module']) && $oct_data['oct_lazyload_module'] == 1)) {
+			if ($oct_data['enable_minify'] == 'off') {
+				$this->document->addScript('catalog/view/theme/oct_techstore/js/lazyload/jquery.lazyload.min.js');
+			}
+
+			$data['oct_lazyload'] = $oct_data['oct_lazyload'];
+
+			if (isset($oct_data['oct_lazyload_image']) && $oct_data['oct_lazyload_image']) {
+				$data['oct_lazyload_image'] = 'image/'.$oct_data['oct_lazyload_image'];
+			} else {
+				$data['oct_lazyload_image'] = '/image/catalog/1lazy/oct_loader_product.gif';
+			}
+		}
+	  ]]></add>
+    </operation>
+
+  </file>
+
+  <file path="catalog/controller/extension/module/oct_p_special_timer.php">
+    <operation>
+      <search><![CDATA[$this->load->language('extension/module/oct_p_special_timer');]]></search>
+      <add position="after"><![CDATA[
+		$oct_data = $this->config->get('oct_techstore_data');
+
+		if ((isset($oct_data['oct_lazyload']) && $oct_data['oct_lazyload'] == 1) && (isset($oct_data['oct_lazyload_module']) && $oct_data['oct_lazyload_module'] == 1)) {
+			if ($oct_data['enable_minify'] == 'off') {
+				$this->document->addScript('catalog/view/theme/oct_techstore/js/lazyload/jquery.lazyload.min.js');
+			}
+
+			$data['oct_lazyload'] = $oct_data['oct_lazyload'];
+
+			if (isset($oct_data['oct_lazyload_image']) && $oct_data['oct_lazyload_image']) {
+				$data['oct_lazyload_image'] = 'image/'.$oct_data['oct_lazyload_image'];
+			} else {
+				$data['oct_lazyload_image'] = '/image/catalog/1lazy/oct_loader_product.gif';
+			}
+		}
+	  ]]></add>
+    </operation>
+
+  </file>
+
+  <file path="catalog/controller/extension/module/oct_product_tab.php">
+    <operation>
+      <search><![CDATA[$this->load->language('extension/module/oct_product_tab');]]></search>
+      <add position="after"><![CDATA[
+		$oct_data = $this->config->get('oct_techstore_data');
+
+		if ((isset($oct_data['oct_lazyload']) && $oct_data['oct_lazyload'] == 1) && (isset($oct_data['oct_lazyload_module']) && $oct_data['oct_lazyload_module'] == 1)) {
+			if ($oct_data['enable_minify'] == 'off') {
+				$this->document->addScript('catalog/view/theme/oct_techstore/js/lazyload/jquery.lazyload.min.js');
+			}
+
+			$data['oct_lazyload'] = $oct_data['oct_lazyload'];
+
+			if (isset($oct_data['oct_lazyload_image']) && $oct_data['oct_lazyload_image']) {
+				$data['oct_lazyload_image'] = 'image/'.$oct_data['oct_lazyload_image'];
+			} else {
+				$data['oct_lazyload_image'] = '/image/catalog/1lazy/oct_loader_product.gif';
+			}
+		}
+	  ]]></add>
+    </operation>
+
+  </file>
+
+  <file path="catalog/controller/extension/module/oct_product_viewed.php">
+    <operation>
+      <search><![CDATA[$this->load->language('extension/module/oct_product_viewed');]]></search>
+      <add position="after"><![CDATA[
+		$oct_data = $this->config->get('oct_techstore_data');
+
+		if ((isset($oct_data['oct_lazyload']) && $oct_data['oct_lazyload'] == 1) && (isset($oct_data['oct_lazyload_module']) && $oct_data['oct_lazyload_module'] == 1)) {
+			if ($oct_data['enable_minify'] == 'off') {
+				$this->document->addScript('catalog/view/theme/oct_techstore/js/lazyload/jquery.lazyload.min.js');
+			}
+
+			$data['oct_lazyload'] = $oct_data['oct_lazyload'];
+
+			if (isset($oct_data['oct_lazyload_image']) && $oct_data['oct_lazyload_image']) {
+				$data['oct_lazyload_image'] = 'image/'.$oct_data['oct_lazyload_image'];
+			} else {
+				$data['oct_lazyload_image'] = '/image/catalog/1lazy/oct_loader_product.gif';
+			}
+		}
+	  ]]></add>
+    </operation>
+
+  </file>
+
+  <file path="catalog/controller/extension/module/oct_products_from_category.php">
+    <operation>
+      <search><![CDATA[$this->load->language('extension/module/oct_products_from_category');]]></search>
+      <add position="after"><![CDATA[
+		$oct_data = $this->config->get('oct_techstore_data');
+
+		if ((isset($oct_data['oct_lazyload']) && $oct_data['oct_lazyload'] == 1) && (isset($oct_data['oct_lazyload_module']) && $oct_data['oct_lazyload_module'] == 1)) {
+			if ($oct_data['enable_minify'] == 'off') {
+				$this->document->addScript('catalog/view/theme/oct_techstore/js/lazyload/jquery.lazyload.min.js');
+			}
+
+			$data['oct_lazyload'] = $oct_data['oct_lazyload'];
+
+			if (isset($oct_data['oct_lazyload_image']) && $oct_data['oct_lazyload_image']) {
+				$data['oct_lazyload_image'] = 'image/'.$oct_data['oct_lazyload_image'];
+			} else {
+				$data['oct_lazyload_image'] = '/image/catalog/1lazy/oct_loader_product.gif';
+			}
+		}
+	  ]]></add>
+    </operation>
+
+  </file>
+
+  <file path="catalog/controller/extension/module/special.php">
+    <operation>
+      <search><![CDATA[$this->load->language('extension/module/special');]]></search>
+      <add position="replace"><![CDATA[
+		$oct_data = $this->config->get('oct_techstore_data');
+
+		if ((isset($oct_data['oct_lazyload']) && $oct_data['oct_lazyload'] == 1) && (isset($oct_data['oct_lazyload_module']) && $oct_data['oct_lazyload_module'] == 1)) {
+			if ($oct_data['enable_minify'] == 'off') {
+				$this->document->addScript('catalog/view/theme/oct_techstore/js/lazyload/jquery.lazyload.min.js');
+			}
+
+			$data['oct_lazyload'] = $oct_data['oct_lazyload'];
+
+			if (isset($oct_data['oct_lazyload_image']) && $oct_data['oct_lazyload_image']) {
+				$data['oct_lazyload_image'] = 'image/'.$oct_data['oct_lazyload_image'];
+			} else {
+				$data['oct_lazyload_image'] = '/image/catalog/1lazy/oct_loader_product.gif';
+			}
+		}
+	  ]]></add>
+    </operation>
+
+  </file>
+
+  <file path="catalog/controller/product/category.php">
+    <operation>
+      <search><![CDATA[$this->load->language('product/category');]]></search>
+      <add position="before"><![CDATA[
+		$oct_data = $this->config->get('oct_techstore_data');
+
+		if (isset($oct_data['oct_lazyload']) && $oct_data['oct_lazyload'] == 1) {
+			if ($oct_data['enable_minify'] == 'off') {
+				$this->document->addScript('catalog/view/theme/oct_techstore/js/lazyload/jquery.lazyload.min.js');
+			}
+
+			$data['oct_lazyload'] = $oct_data['oct_lazyload'];
+
+			if (isset($oct_data['oct_lazyload_image']) && $oct_data['oct_lazyload_image']) {
+				$data['oct_lazyload_image'] = 'image/'.$oct_data['oct_lazyload_image'];
+			} else {
+				$data['oct_lazyload_image'] = '/image/catalog/1lazy/oct_loader_product.gif';
+			}
+		}
+	  ]]></add>
+    </operation>
+
+  </file>
+
+  <file path="catalog/controller/product/manufacturer.php">
+    <operation>
+      <search><![CDATA[if (isset($this->request->get['manufacturer_id'])) {]]></search>
+      <add position="before"><![CDATA[
+		$oct_data = $this->config->get('oct_techstore_data');
+
+		if (isset($oct_data['oct_lazyload']) && $oct_data['oct_lazyload'] == 1) {
+			if ($oct_data['enable_minify'] == 'off') {
+				$this->document->addScript('catalog/view/theme/oct_techstore/js/lazyload/jquery.lazyload.min.js');
+			}
+
+			$data['oct_lazyload'] = $oct_data['oct_lazyload'];
+
+			if (isset($oct_data['oct_lazyload_image']) && $oct_data['oct_lazyload_image']) {
+				$data['oct_lazyload_image'] = 'image/'.$oct_data['oct_lazyload_image'];
+			} else {
+				$data['oct_lazyload_image'] = '/image/catalog/1lazy/oct_loader_product.gif';
+			}
+		}
+	  ]]></add>
+    </operation>
+
+  </file>
+
+  <file path="catalog/controller/product/product.php">
+    <operation>
+      <search><![CDATA[$data['breadcrumbs'] = array();]]></search>
+      <add position="before"><![CDATA[
+		$oct_data = $this->config->get('oct_techstore_data');
+
+		if ((isset($oct_data['oct_lazyload']) && $oct_data['oct_lazyload'] == 1) && (isset($oct_data['oct_lazyload_module']) && $oct_data['oct_lazyload_module'] == 1)) {
+			if ($oct_data['enable_minify'] == 'off') {
+				$this->document->addScript('catalog/view/theme/oct_techstore/js/lazyload/jquery.lazyload.min.js');
+			}
+
+			$data['oct_lazyload'] = $oct_data['oct_lazyload'];
+
+			if (isset($oct_data['oct_lazyload_image']) && $oct_data['oct_lazyload_image']) {
+				$data['oct_lazyload_image'] = 'image/'.$oct_data['oct_lazyload_image'];
+			} else {
+				$data['oct_lazyload_image'] = '/image/catalog/1lazy/oct_loader_product.gif';
+			}
+		}
+	  ]]></add>
+    </operation>
+
+  </file>
+
+  <file path="catalog/controller/product/search.php">
+    <operation>
+      <search><![CDATA[$this->load->language('product/search');]]></search>
+      <add position="after"><![CDATA[
+		$oct_data = $this->config->get('oct_techstore_data');
+
+		if (isset($oct_data['oct_lazyload']) && $oct_data['oct_lazyload'] == 1) {
+			if ($oct_data['enable_minify'] == 'off') {
+				$this->document->addScript('catalog/view/theme/oct_techstore/js/lazyload/jquery.lazyload.min.js');
+			}
+
+			$data['oct_lazyload'] = $oct_data['oct_lazyload'];
+
+			if (isset($oct_data['oct_lazyload_image']) && $oct_data['oct_lazyload_image']) {
+				$data['oct_lazyload_image'] = 'image/'.$oct_data['oct_lazyload_image'];
+			} else {
+				$data['oct_lazyload_image'] = '/image/catalog/1lazy/oct_loader_product.gif';
+			}
+		}
+	  ]]></add>
+    </operation>
+
+  </file>
+
+  <file path="catalog/controller/product/special.php">
+    <operation>
+      <search><![CDATA[$this->load->language('product/special');]]></search>
+      <add position="after"><![CDATA[
+		$oct_data = $this->config->get('oct_techstore_data');
+
+		if (isset($oct_data['oct_lazyload']) && $oct_data['oct_lazyload'] == 1) {
+			if ($oct_data['enable_minify'] == 'off') {
+				$this->document->addScript('catalog/view/theme/oct_techstore/js/lazyload/jquery.lazyload.min.js');
+			}
+
+			$data['oct_lazyload'] = $oct_data['oct_lazyload'];
+
+			if (isset($oct_data['oct_lazyload_image']) && $oct_data['oct_lazyload_image']) {
+				$data['oct_lazyload_image'] = 'image/'.$oct_data['oct_lazyload_image'];
+			} else {
+				$data['oct_lazyload_image'] = '/image/catalog/1lazy/oct_loader_product.gif';
+			}
+		}
+	  ]]></add>
+    </operation>
+
+  </file>
+</modification>
